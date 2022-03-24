@@ -1,4 +1,4 @@
-Provides detailed overview of all running processes in a SQL Server.
+--Provides detailed overview of all running processes in a SQL Server.
 
 -------Detailed_ver4
 select c.session_id as spid,case when r.session_id is null then 'IA' else 'A' end as "?",
