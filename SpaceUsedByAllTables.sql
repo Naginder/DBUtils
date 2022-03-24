@@ -5,7 +5,7 @@
 select OBJECT_NAME(object_id)as name,sum(reserved_page_count*8192.00/1073741824) as "size(gb)",
 sum(case when (index_id > 1) then 0 else row_count end)as rows
 from sys.dm_db_partition_stats where object_id in (select object_id from sys.objects where type='u' and is_ms_shipped=0) 
-and reserved_page_count>1000
+--and reserved_page_count>1000
 group by object_name(object_id)
 order by "size(gb)" desc
 
@@ -26,7 +26,7 @@ and db_name() not in (''tempdb'',''model'',''ReportServer'',''ReportServerTempDB
 group by OBJECT_NAME(object_id)'
 
 select * from #tabledtls 
-where [size(gb)]>1000
+--where [size(gb)]>1000
 order by "size(gb)" desc
 drop table #tabledtls
 
