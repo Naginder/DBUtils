@@ -8,7 +8,7 @@ WHEN -1 THEN DATALENGTH(t.text)ELSE (r.statement_end_offset/2 - r.statement_star
 coalesce(convert(varchar(12),getdate()-r.start_time,114),convert(varchar(12),last_request_end_time-last_request_start_time,114))  elapsedtime,
 s.login_name,s.host_name,c.client_net_address as ip,s.program_name,coalesce(start_time,s.last_request_start_time) as start_time
 ,coalesce(r.status,s.status) as status,command,db_name(coalesce(t.dbid,sp.dbid)) dbname,coalesce(blocking_session_id,blocked) as "blk?",
-wait_type,wait_time,last_wait_type,wait_resource,open_transaction_count as trcnt,r.cpu_time,
+wait_type,wait_time,last_wait_type,wait_resource,r.open_transaction_count as trcnt,r.cpu_time,
 r.reads,r.writes,r.logical_reads as logrds,p.query_plan,r.percent_complete as "%",
 dateadd(ms,r.estimated_completion_time,getdate())estimated_completion_time
 --,cast((select db_name(resource_database_id)as dbname,resource_type,case resource_type when 'object' then 
