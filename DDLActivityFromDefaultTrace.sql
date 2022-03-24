@@ -104,4 +104,4 @@ WHERE   TE.name IN ( 'Object:Created', 'Object:Deleted', 'Object:Altered' )
         AND DatabaseID <> 2
                 -- get only events in the past 24 hours
         AND StartTime > DATEADD(HH, -24, GETDATE())
-ORDERBY t.StartTime DESC ;
+ORDER BY t.StartTime DESC ;
