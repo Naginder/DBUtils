@@ -1,4 +1,4 @@
-Finds Duplicate Indexes (Exact or Partial) for a single database or server wide.
+--Finds Duplicate Indexes (Exact or Partial) for a single database or server wide.
 
 -- exact duplicates
 with indexcols as
