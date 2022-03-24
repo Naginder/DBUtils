@@ -1,4 +1,5 @@
 --Finds Duplicate Indexes (Exact or Partial) for a single database or server wide.
+--only for sql 2008r2 and below
 
 -- exact duplicates
 with indexcols as
